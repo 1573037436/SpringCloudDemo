@@ -1,11 +1,11 @@
 package com.zzj.cloud.service;
 
 import com.zzj.cloud.model.User;
-import org.springframework.cloud.netflix.feign.FeignClient;
 
 /**
  * Created by zzj on 2020/6/1.
  */
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 //以后调用microservicecloud-provider微服务中的方法，只需要调用下面对应的接口既可以了
-@FeignClient(value="microservicecloud-provider")
+@FeignClient(name="microservicecloud-provider")
 public interface ConsumerService {
 
     /*调用接口中的get方法，即可以向microservicecloud-provider微服务发送/get/{id}请求*/

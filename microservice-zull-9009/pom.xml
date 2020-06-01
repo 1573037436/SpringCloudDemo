@@ -15,11 +15,16 @@
             <!-- zuul路由网关 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-eureka</artifactId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            </dependency>
+            <!--需要添加web依赖，否则Eureka客户端服务无法启动-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-zuul</artifactId>
+                <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
             </dependency>
             <!-- 热部署插件 -->
             <dependency>
