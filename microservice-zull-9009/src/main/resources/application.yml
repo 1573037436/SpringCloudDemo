@@ -1,0 +1,20 @@
+server:
+  port: 9009
+
+spring:
+  application:
+    name: microservice-zull
+eureka:
+  client:
+    service-url:
+      defaultZone: http://config6000.com:8001/eureka/
+  instance:
+    instance-id: microservice-zull6001                        #自定义服务名称信息
+    prefer-ip-address: true                                   #访问路径可以显示IP地址
+
+zuul:
+  prefix: /MyDemo                                     #给访问路径添加前缀 http://config6000.com:9009/MyDemo/provider/get/2
+  ignored-services: microservicecloud-provider        #设置请求中带服务名的链接无法访问 http://config6000.com:9009/microservicecloud-provider/xxx
+  routes:
+    mydept.serviceId: microservicecloud-provider      #没起别名时访问路径 http://config6000.com:9009/microservicecloud-provider/get/2
+    mydept.path: /provider/**                         #给microservicecloud-provider起别名 访问路径http://config6000.com:9009/provider/get/2

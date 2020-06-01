@@ -1,0 +1,9 @@
+/.idea
+/microservice-common/target
+/microservice-config-8000/target
+/microservice-consumer-6001/target
+/microservice-eureka-8001/target
+/microservice-provider-9001/target
+/microservice-provider-9002/target
+/microservice-provider-9003/target
+/microservice-zull-9009/target
